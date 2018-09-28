@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            //Blog object constructor
+            function Blog(body,date){
+                this.body = body;
+                this.date = date;
+            }
+            
+            //Global arry of blog entries
+            var blog = [ new Blog("Got the new cube I ordered..", "08/14/2008"),
+                        new Blog("Solved the new cube but of course...", "08/19/2008"),
+                        new Blog("Managed to get a headache toiling...", "08/16/2008"),
+                        new Blog("Found a 7x7x7 cube for sale online...", "08/21/2008") ];
+                    
+                    function showBlog(){
+                        
+                            blogText = "";
+                            for (var i = 0; i < blog.length; i++) {
+                                blogText += "<p> <strong>" + blog[i].date + "</strong><br>" +
+                                        blog[i].body + "</p>";
+                                alert(blogText);
+
+                                }
+                                document.getElementById("blogPost").innerHTML = blogText;
+                                
+                    }
+                   
+        </script>
+                    
+           
+    </head>
+    <body onload="showBlog();">
+        <h3>YouCube- The Blog for Cube Puzzlers</h3>
+        <div id="blogPost"></div>
+    </body>
+</html>
