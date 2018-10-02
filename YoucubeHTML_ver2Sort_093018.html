@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            //Blog object constructor
+            function Blog(body,date){
+                this.body = body;
+                this.date = date;
+            }
+            
+            //Global arry of blog entries
+            var blog = [ new Blog("Got the new cube I ordered..", new Date("08/14/2008")),
+                        new Blog("Solved the new cube but of course...", new Date("08/19/2008")),
+                        new Blog("Managed to get a headache toiling...", new Date("08/16/2008")),
+                        new Blog("Found a 7x7x7 cube for sale online...", new Date("08/21/2008")) ];
+                    
+                    function showBlog(){
+                            
+                            //Sorts the dates in reverse chronological order
+                            blog.sort(function(blog1, blog2) { return blog2.date - blog1.date; });
+                            blogText = "";
+                            
+                            //Generates the formatted blog HTML code
+                            for (var i = 0; i < blog.length; i++) {
+                                blogText += "<p> <strong>" + blog[i].date.getMonth()+ "/" + blog[i].date.getDate() + "/" + blog[i].date.getFullYear() + "</strong><br>" +
+                                        blog[i].body + "</p>";
+
+                                }
+                                //sets the blog HTML code on the page
+                                document.getElementById("blogPost").innerHTML = blogText;
+                                
+                    }
+                   
+        </script>
+                    
+           
+    </head>
+    <body onload="showBlog();">
+        <h3>YouCube- The Blog for Cube Puzzlers</h3>
+        <div id="blogPost"></div>
+    </body>
+</html>
